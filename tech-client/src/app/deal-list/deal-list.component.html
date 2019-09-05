@@ -1,0 +1,25 @@
+<h2>Deal List</h2>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Deal ID</th>
+    <th scope="col">Retention</th>
+    <th scope="col">Limit</th>
+    <th scope="col">Perils</th>
+    <th scope="col">Regions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let deal of dealList">
+    <td>{{deal.id}}</td>
+    <td>{{deal.retention}}</td>
+    <td>{{deal.limit}}</td>
+    <td>{{getPerilsString(deal.perils)}}</td>
+    <td>{{getRegionsString(deal.regions)}}</td>
+  </tr>
+  </tbody>
+</table>
+
+
+

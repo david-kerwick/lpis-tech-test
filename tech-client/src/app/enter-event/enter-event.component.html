@@ -1,0 +1,43 @@
+
+  <h1>Event Form</h1>
+  <form (ngSubmit)="onSubmit()" #eventForm="ngForm" class="form-inline">
+
+    <div class="form-group">
+      <label for="id" class="mr-2 col-form-label">Id</label>
+      <input type="text" class="form-control mr-2" id="id" required
+             [(ngModel)]="model.id" name="id">
+    </div>
+
+    <div class="form-group">
+      <label for="peril" class="mr-2 col-form-label">Peril</label>
+      <select class="form-control mr-2" id="peril" required
+              [(ngModel)]="model.peril" name="peril">
+        <option value="">Select a Peril</option>
+        <option *ngFor="let perilDetails of perilOptions" [value]="perilDetails.id">{{perilDetails.name}}</option>
+      </select>
+
+
+    </div>
+
+    <div class="form-group">
+      <label for="region" class="mr-2 col-form-label">Region</label>
+      <select class="form-control mr-2" id="region" required
+      [(ngModel)]="model.region" name="region">
+        <option value="">Select a Region</option>
+        <option *ngFor="let regionDetails of regionOptions" [value]="regionDetails.id">{{regionDetails.name}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="lossFromEvent" class="mr-2 col-form-label">Loss</label>
+      <input type="text" class="form-control mr-2" id="lossFromEvent" required
+             [(ngModel)]="model.lossFromEvent" name="loss">
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!eventForm.form.valid">Submit</button>
+
+  </form>
+
+
+
+<app-payment-list [paymentResults]="paymentList"></app-payment-list>

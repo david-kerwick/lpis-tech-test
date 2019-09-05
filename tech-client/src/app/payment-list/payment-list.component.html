@@ -1,0 +1,18 @@
+<h2>Payment List</h2>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Event ID</th>
+    <th scope="col">Deal ID</th>
+    <th scope="col">Loss</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let payment of paymentResults">
+    <td>{{payment.eventId}}</td>
+    <td>{{payment.dealId}}</td>
+    <td>{{payment.loss}}</td>
+  </tr>
+  </tbody>
+</table>
